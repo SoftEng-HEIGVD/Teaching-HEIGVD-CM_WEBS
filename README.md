@@ -56,4 +56,8 @@ IssueType.findById("id", function(err, issueType) {
 		issueType: issueType
 	});
 })
+
+var issue = new Issue({
+	issueType: "id"
+});
 ```
