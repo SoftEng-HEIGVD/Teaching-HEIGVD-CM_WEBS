@@ -12,3 +12,48 @@
 3. Go to your project directory: `cd <app directory>`
 4. Run the following command: `heroku create`
 5. To deploy the app, run this command: `git push heroku master` or follow the specific instructions present in the app README.md.
+
+### Express - Mongoose example
+
+```
+var
+  mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
+
+// Issue type definition
+var IssueType = new Schema({
+  name: String,
+  description: String
+});
+
+mongoose.model('IssueType', IssueType);
+
+// Issue definition
+var Issue = new Schema({
+  description: String,
+	// Default value on object creation
+	updatedOn: { type: Date, default: Date.now },
+	// ...
+	issueType: { type: Schema.Types.ObjectId, ref: 'IssueType' }
+});
+
+// Hook applied before object saved to enrich the object data
+Issue.pre('save', function(next) {
+	this.updatedOn = new Date();
+	next();
+});
+
+mongoose.model('Issue', Issue);
+
+Issue.find()
+	.populate('issueType')
+	.exec(function(err, issues) {
+		// Do something with the issues
+	});
+
+IssueType.findById("id", function(err, issueType) {
+	var issue = new Issue({
+		issueType: issueType
+	});
+})
+```
