@@ -13,6 +13,10 @@
 4. Run the following command: `heroku create`
 5. To deploy the app, run this command: `git push heroku master` or follow the specific instructions present in the app README.md.
 
+### Resources
+
+[HTTP return codes](http://www.askapache.com/htaccess/apache-status-code-headers-errordocument.html)
+
 ### Express - Mongoose example
 
 ```javascript
