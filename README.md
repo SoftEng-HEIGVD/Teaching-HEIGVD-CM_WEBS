@@ -125,7 +125,7 @@ router.all('/api/*', authenticate);
 ```
 ### Labo Delivery
 
-**Delivery date: 2nd of March 2015 at noon**
+**Delivery date: `2nd of March 2015 at noon`**
 
 Send a mail to laurent.prevost [at] heig-vd.ch with the following informations:
 
