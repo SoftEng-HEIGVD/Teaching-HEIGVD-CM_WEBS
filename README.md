@@ -125,6 +125,8 @@ router.all('/api/*', authenticate);
 ```
 ### Labo Delivery
 
+**Delivery date: 2nd of March 2015 at noon**
+
 Send a mail to laurent.prevost [at] heig-vd.ch with the following informations:
 
 - Link to the Documentation repository (raml content, customized static website)
@@ -137,8 +139,7 @@ We expect, at least, the following:
 	- Names of team members
 	- Link to Heroku application deployed (if applicable, at least the doc and the chosen techno implementation)
 - RAML part
-	- Whole documentation of your resources (it MUST be coherent with your implementation)
+	- Whole documentation of your resources (it **MUST** be coherent with your implementation)
 	- Customization of the static content (welcome page, blog articles, API ref main page)
 	- In the footer, we expect to see the team member names
 	- Somewhere in the static pages, we expect to find the link to Heroku application of your API implementation
-
