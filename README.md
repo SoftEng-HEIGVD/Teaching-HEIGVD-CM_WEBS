@@ -61,3 +61,48 @@ var issue = new Issue({
 	issueType: "id"
 });
 ```
+
+### Express - Routing example
+
+```javascript
+function authenticate(req, res, next) {
+	// Try to retrieve the userId from HTTP headers
+	var userId = req.headers['x-user-id'];
+
+	if (userId != undefined) {
+		// Try to retrieve the corresponding user
+		User.findById(userId, function (err, user) {
+			if (err || user == null) {
+				res.status(401).end();
+			}
+
+			// If user has at least one role, then he is authorized to access the API
+			if (user.roles.length > 0) {
+				req.user = user;
+				// Continue the invocation chain
+				next();
+			}
+			else {
+				res.status(403).end();
+			}
+		});
+	}
+	else {
+		res.status(401).end();
+	}
+},
+
+
+module.exports = function (app) {
+  app.use('/api/users', router);
+};
+
+router.route('/')
+	.get(authenticationService.authenticate)
+	.get(function(req, res, next) {
+		User.find(function (err, users) {
+		  if (err) return next(err);
+		  res.json(users);
+		});
+	});
+```
