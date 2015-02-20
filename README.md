@@ -99,7 +99,7 @@ module.exports = function (app) {
 
 // First possibility
 router.route('/')
-	.get(authenticationService.authenticate)
+	.get(authenticate)
 	.get(function(req, res, next) {
 		User.find(function (err, users) {
 		  if (err) return next(err);
@@ -109,7 +109,7 @@ router.route('/')
 
 // Second possibility
 router.route('/')
-	.get(authenticationService.authenticate), function(req, res, next) {
+	.get(authenticate), function(req, res, next) {
 		User.find(function (err, users) {
 		  if (err) return next(err);
 		  res.json(users);
