@@ -109,7 +109,7 @@ router.route('/')
 
 // Second possibility
 router.route('/')
-	.get(authenticate), function(req, res, next) {
+	.get(authenticate, function(req, res, next) {
 		User.find(function (err, users) {
 		  if (err) return next(err);
 		  res.json(users);
