@@ -123,3 +123,22 @@ router.route('/')
 // In this example, maybe we want to apply authentication to **ALL** resources (Maybe not a good idea for creating a new user!)
 router.all('/api/*', authenticate);
 ```
+### Labo Delivery
+
+Send a mail to laurent.prevost [at] heig-vd.ch with the following informations:
+
+- Link to the Documentation repository (raml content, customized static website)
+- Link to the Spring Boot implementation repository (even if it is not fully implemented)
+- Link to the Express implementation repository (even if it is not fully implemented)
+
+We expect, at least, the following:
+
+- Each repository to contain the README.md updated with
+	- Names of team members
+	- Link to Heroku application deployed (if applicable, at least the doc and the chosen techno implementation)
+- RAML part
+	- Whole documentation of your resources (it MUST be coherent with your implementation)
+	- Customization of the static content (welcome page, blog articles, API ref main page)
+	- In the footer, we expect to see the team member names
+	- Somewhere in the static pages, we expect to find the link to Heroku application of your API implementation
+
