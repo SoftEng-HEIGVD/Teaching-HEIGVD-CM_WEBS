@@ -143,3 +143,9 @@ We expect, at least, the following:
 	- Customization of the static content (welcome page, blog articles, API ref main page)
 	- In the footer, we expect to see the team member names
 	- Somewhere in the static pages, we expect to find the link to Heroku application of your API implementation
+	- In a blog post, indicates which technology you have chosen and the reasons of your choice.
+
+Remember to match the requirements expressed in the [blog](http://www.iflux.io/blog.html) post.
+
+**REMARK**: Do not worry if you do not have an Express (JavaScript) fork when you have chosen to do the labo only in Spring Boot (Java). Just specify it in the blog post that
+indicates which techno you have chosen.
